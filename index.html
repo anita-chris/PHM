@@ -1,150 +1,18 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christoph & Anita | Hochzeit</title>
-  <style>
-    :root{--cream:#FEE8D1;--apricot:#F4A261;--rose:#D5A0C2;--raspberry:#E4505E;--magenta:#B20254;--ink:#3D1930;--white:#fff}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Georgia,'Times New Roman',serif;color:var(--ink);background:var(--cream);line-height:1.65}
-    nav{position:fixed;top:0;width:100%;z-index:10;background:rgba(254,232,209,.95);backdrop-filter:blur(8px);padding:14px 5%;display:flex;justify-content:center;gap:26px;border-bottom:1px solid rgba(38,50,45,.08)}
-    nav a{color:var(--ink);text-decoration:none;font:14px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}
-    .hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:90px 20px 40px;background:linear-gradient(rgba(28,39,33,.38),rgba(28,39,33,.42)),url('Krohnleuchter.jpg') center/cover no-repeat;color:white}
-    .hero h1{font-size:clamp(48px,9vw,96px);font-weight:400;margin:0 0 10px}.hero p{font-size:20px;letter-spacing:.12em}.btn{display:inline-block;margin-top:25px;padding:13px 25px;background:white;color:var(--ink);text-decoration:none;border-radius:999px;font:600 14px Arial,sans-serif}
-    section{max-width:1280px;margin:auto;padding:120px 40px}.eyebrow{text-align:center;font:12px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--magenta)}h2{text-align:center;font-size:54px;font-weight:400;margin:0 0 46px}.intro{text-align:center;max-width:900px;margin:auto;font-size:27px;line-height:1.7}
-    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.card{background:white;padding:42px 30px;border-radius:14px;text-align:center;box-shadow:0 5px 24px rgba(38,50,45,.06)}.time{font:700 25px Arial,sans-serif;color:var(--magenta);letter-spacing:.04em}.agenda-icon{font-size:34px;line-height:1;display:block;margin:16px 0 13px}.agenda-icon-img{display:block;width:72px;height:72px;object-fit:contain;margin:12px auto 8px}.witness-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:950px;margin:auto}.witness-card{text-align:center}.witness-role{font:600 13px Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--magenta);margin-bottom:8px}.witness-contact{font:15px Arial,sans-serif;margin-top:18px}.witness-note{max-width:720px;text-align:center;margin:0 auto 38px;font-size:19px}.card h3{font-size:28px;font-weight:400;margin:8px 0}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:stretch}.location-stack{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;max-width:1180px;margin:auto;align-items:stretch}.panel{background:transparent;border-radius:0;padding:28px 18px 28px 0}.location-stack .panel h3{font-size:38px;margin:0 0 24px}.location-stack .panel p{font-size:21px;line-height:1.65}.location-stack .panel .small{font-size:18px}.map{min-height:440px;background:var(--rose);display:grid;place-items:center;text-align:center;padding:25px;border-radius:14px}.small{font:14px Arial,sans-serif;color:#59625e}.link{color:var(--magenta);font-weight:bold}
-    .hotels{display:grid;grid-template-columns:1fr;gap:16px}.hotel{text-align:left;background:var(--apricot);color:var(--ink);padding:34px 36px}.hotel h3{font-size:31px;margin:0 0 12px}.hotel .tag{font-size:15px;background:var(--cream);color:var(--magenta);padding:7px 12px}.hotel a{display:inline-block;margin-top:18px;color:var(--magenta);font:700 16px Arial,sans-serif}.hotel-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,1.05fr);gap:28px;align-items:stretch}.hotel-map{min-height:650px;border:0;border-radius:16px;width:100%;background:var(--rose)}.location-photo{width:100%;height:100%;min-height:440px;object-fit:cover;border-radius:16px;display:block;margin:0}.hotel .tag{display:inline-block;background:var(--rose);padding:5px 9px;border-radius:999px;font:12px Arial,sans-serif}.hotel a{color:var(--magenta)}
-    .rsvp{background:var(--raspberry);max-width:none;color:white}.rsvp .inner{max-width:900px;margin:auto}.rsvp h2{color:white}.rsvp form{display:grid;gap:15px;background:white;color:var(--ink);padding:46px;border-radius:16px}label{font:600 17px Arial,sans-serif}input,select,textarea{width:100%;padding:13px;border:1px solid #ccd3ce;border-radius:8px;background:#fff;font:16px Arial,sans-serif}button{padding:14px;background:var(--magenta);color:white;border:0;border-radius:999px;font:600 14px Arial,sans-serif;cursor:pointer}
-    footer{text-align:center;padding:80px 20px;background:var(--magenta);color:white}footer h2{margin-bottom:10px}
-    @media(max-width:760px){.witness-grid{grid-template-columns:1fr}.location-stack{grid-template-columns:1fr}.location-photo{height:480px;min-height:0}.hotel-layout{grid-template-columns:1fr}.hotel-map{min-height:420px}nav{gap:12px;overflow-x:auto;justify-content:flex-start}nav a{white-space:nowrap}.timeline,.hotels,.split{grid-template-columns:1fr}section{padding:85px 22px}.hero h1{font-size:58px}}
-  
-    /* Hotel section overrides */
-    #hotels .hotel{background:#fff;color:var(--ink);padding:38px 40px}
-    #hotels .hotel h3{font-size:35px;margin:0 0 12px}
-    #hotels .hotel .tag{font:600 18px Arial,sans-serif;background:transparent;color:var(--ink);padding:0;border-radius:0}
-  
-    /* Final hotel styling */
-    section#hotels{background:#FCDABA !important;}
-    section#hotels .card.hotel{background:#FFFFFF !important;color:var(--ink) !important;padding:38px 40px !important;}
-    section#hotels .card.hotel h3{font-size:36px !important;margin:0 0 14px !important;}
-    section#hotels .card.hotel .tag{display:inline-block !important;background:#F4A261 !important;color:var(--ink) !important;padding:7px 12px !important;border-radius:8px !important;font:600 17px Arial,sans-serif !important;}
-    section#hotels .card.hotel a{display:none !important;}
-  
-    #hotel-map.hotel-map{min-height:650px;border-radius:16px;overflow:hidden;background:#FCDABA}
-    .marker-label{background:transparent;border:0;box-shadow:none;color:#3D1930;font:bold 12px Arial,sans-serif}
-    .leaflet-tooltip.marker-label:before{display:none}
-  </style>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-</head>
-<body>
-  <nav>
-    <a href="#tag">Der Tag</a><a href="#location">Location</a><a href="#hotels">Hotels</a><a href="#trauzeugen">Trauzeugen</a><a href="#rsvp">RSVP</a>
-  </nav>
-
-  <header class="hero">
-    <div>
-      <p>WIR HEIRATEN</p>
-      <h1>Christoph & Anita</h1>
-      <p>05. JUNI 2027</p>
-      <a class="btn" href="#rsvp">Zu- oder absagen</a>
-    </div>
-  </header>
-
-  <section>
-    <h2>Wir freuen uns auf euch.</h2>
-    <p class="intro">Wir möchten diesen besonderen Tag mit unseren Lieblingsmenschen verbringen. Hier findet ihr alle wichtigen Informationen rund um unsere Hochzeit.</p>
-  </section>
-
-  <section id="tag" style="background:rgba(244,162,97,.20);max-width:none;padding-left:max(40px,calc((100% - 1280px)/2 + 40px));padding-right:max(40px,calc((100% - 1280px)/2 + 40px))"><h2>Der Tag</h2>
-    <div class="timeline">
-      <div class="card"><div class="time">14:00</div><img class="agenda-icon-img" src="icon-trauung.png" alt="" aria-hidden="true"><h3>Trauung</h3></div>
-      <div class="card"><div class="time">15:30</div><img class="agenda-icon-img" src="icon-sektempfang.png" alt="" aria-hidden="true"><h3>Sektempfang</h3></div>
-      <div class="card"><div class="time">18:30</div><img class="agenda-icon-img" src="icon-dinner.png" alt="" aria-hidden="true"><h3>Dinner</h3></div>
-      <div class="card"><div class="time">21:00</div><img class="agenda-icon-img" src="icon-party.png" alt="" aria-hidden="true"><h3>Party</h3></div>
-    </div>
-  </section>
-
-  <section id="location"><h2>Location & Anreise</h2>
-    <div class="location-stack">
-      <div class="panel"><h3>Haldmühle zu Bissersheim</h3><p>Haldmühle 1<br>67281 Bissersheim</p><p>Trauung und Feier finden auf dem Gelände der Haldmühle zu Bissersheim statt.</p><p><a class="link" href="https://www.google.com/maps/search/?api=1&query=49.538068%2C8.201874" target="_blank" rel="noopener">Route in Google Maps öffnen →</a></p></div>
-      <img class="location-photo" src="Haldmühle vorne.jpg" alt="Haldmühle zu Bissersheim">
-    </div>
-  </section>
-
-  <section id="hotels" style="background:#FCDABA;max-width:none;padding-left:max(40px,calc((100% - 1280px)/2 + 40px));padding-right:max(40px,calc((100% - 1280px)/2 + 40px))"><h2>Hotels</h2>
-    <div class="hotel-layout">
-      <div class="hotels">
-        <div class="card hotel"><h3>WeinQuartier</h3><span class="tag">Bissersheim</span></div>
-        <div class="card hotel"><h3>Gästehaus Eschment</h3><span class="tag">Bissersheim</span></div>
-        <div class="card hotel"><h3>Exquisite</h3><span class="tag">Bobenheim am Berg</span></div>
-        <div class="card hotel"><h3>Weinheber</h3><span class="tag">Freinsheim</span></div>
-      </div>
-      <div id="hotel-map" class="hotel-map" aria-label="Karte mit Hochzeitslocation und Hotels"></div>
-    </div>
-  </section>
-
-  <section id="trauzeugen">
-    <h2>Unsere Trauzeugen</h2>
-    <p class="witness-note">Bei Fragen, Überraschungen oder Beiträgen zur Feier könnt ihr euch gerne direkt an unsere Trauzeugen wenden.</p>
-    <div class="witness-grid">
-      <div class="card witness-card">
-        <h3>Felix Uebel</h3>
-        <p class="witness-contact">Kontaktdaten folgen</p>
-      </div>
-      <div class="card witness-card">
-        <h3>Niko Benkler</h3>
-        <p class="witness-contact">Kontaktdaten folgen</p>
-      </div>
-      <div class="card witness-card">
-        <h3>Manuel Brand</h3>
-        <p class="witness-contact">Kontaktdaten folgen</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="rsvp" id="rsvp">
-    <div class="inner"><h2>Seid ihr dabei?</h2>
-      <form action="#" method="post">
-        <div><label for="name">Vor- und Nachname</label><input id="name" name="name" required></div>
-        <div><label for="status">Kommt ihr?</label><select id="status" name="status"><option>Ja, wir sind dabei!</option><option>Leider können wir nicht kommen.</option></select></div>
-        <div><label for="personen">Anzahl Personen</label><input id="personen" name="personen" type="number" min="1" max="6" value="1"></div>
-        <div><label for="allergien">Unverträglichkeiten / Hinweise</label><textarea id="allergien" name="allergien" rows="3"></textarea></div>
-        <button type="submit">Rückmeldung absenden</button>
-        <p class="small">Demo: Das Formular ist noch nicht mit einem Formulardienst verbunden.</p>
-      </form>
-    </div>
-  </section>
-
-  <footer><h2>Wir freuen uns auf euch.</h2><p>Christoph & Anita · 05. Juni 2027</p></footer>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script>
-    const map = L.map('hotel-map', {scrollWheelZoom:false});
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    const places = [
-      {name:'Haldmühle zu Bissersheim', detail:'Hochzeitslocation', lat:49.538068, lng:8.201874, kind:'venue'},
-      {name:'WeinQuartier', detail:'Bissersheim', lat:49.537014, lng:8.201998, kind:'hotel'},
-      {name:'Gästehaus Eschment', detail:'Bissersheim', lat:49.5349068, lng:8.2002517, kind:'hotel'},
-      {name:'Exquisite', detail:'Bobenheim am Berg', lat:49.5244616, lng:8.1520095, kind:'hotel'},
-      {name:'Weinheber', detail:'Freinsheim', lat:49.5070831, lng:8.2112436, kind:'hotel'}
-    ];
-    const bounds=[];
-    places.forEach((p,i)=>{
-      const color = p.kind === 'venue' ? '#B20254' : '#F4A261';
-      const marker = L.circleMarker([p.lat,p.lng], {
-        radius: p.kind === 'venue' ? 11 : 9,
-        color:'#3D1930', weight:2, fillColor:color, fillOpacity:1
-      }).addTo(map);
-      marker.bindPopup(`<strong>${p.name}</strong><br>${p.detail}`);
-      marker.bindTooltip(p.kind === 'venue' ? '♥' : String(i), {permanent:true, direction:'center', className:'marker-label'});
-      bounds.push([p.lat,p.lng]);
-    });
-    map.fitBounds(bounds,{padding:[28,28]});
-  </script>
-</body>
-</html>
+<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Christoph & Anita | Hochzeit</title>
+<style>
+:root{--cream:#FEE8D1;--apricot:#F4A261;--rose:#D5A0C2;--raspberry:#E4505E;--magenta:#B20254;--ink:#3D1930}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Georgia,serif;color:var(--ink);background:var(--cream);line-height:1.65}nav{position:fixed;top:0;width:100%;z-index:1000;background:#fee8d1f2;padding:14px 5%;display:flex;justify-content:center;gap:24px}nav a{color:var(--ink);text-decoration:none;font:14px Arial,sans-serif;text-transform:uppercase}.hero{min-height:100vh;display:grid;place-items:center;text-align:center;background:linear-gradient(#1c272160,#1c272170),url('Krohnleuchter.jpg') center/cover;color:#fff;padding:80px 20px}.hero h1{font-size:clamp(48px,9vw,96px);font-weight:400;margin:0}.hero p{font:20px Arial,sans-serif;letter-spacing:.12em}.btn{display:inline-block;margin-top:25px;padding:13px 25px;background:#fff;color:var(--ink);text-decoration:none;border-radius:999px;font:600 14px Arial}section{max-width:1280px;margin:auto;padding:110px 40px}h2{text-align:center;font-size:54px;font-weight:400;margin:0 0 46px}.intro{text-align:center;max-width:900px;margin:auto;font-size:27px}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.card{background:#fff;padding:42px 30px;border-radius:14px;text-align:center;box-shadow:0 5px 24px #26322d10}.time{font:700 25px Arial;color:var(--magenta)}.agenda-icon-img{width:72px;height:72px;object-fit:contain;margin:12px auto 8px;display:block}.card h3{font-size:28px;font-weight:400}.location-stack{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:stretch}.panel h3{font-size:38px}.panel p{font-size:21px}.location-photo{width:100%;height:100%;min-height:440px;object-fit:cover;border-radius:16px}.link{color:var(--magenta);font-weight:bold}#hotels{background:#FCDABA;max-width:none}.hotel-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;max-width:1200px;margin:auto}.hotels{display:grid;gap:16px}.hotel{text-align:left!important;padding:38px 40px}.hotel h3{font-size:36px;margin:0 0 14px}.tag{display:inline-block;background:var(--apricot);padding:7px 12px;border-radius:8px;font:600 17px Arial}.hotel-map{min-height:650px;border-radius:16px;overflow:hidden}.taxi-box{max-width:1200px;margin:30px auto 0;background:#fff;border-radius:14px;padding:34px 40px}.taxi-box h3{font-size:32px;font-weight:400;margin:0 0 8px}.taxi-box p{font-size:19px;margin:4px 0}.taxi-box a{color:var(--magenta);font-weight:bold}.witness-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:950px;margin:auto}.witness-note{text-align:center;font-size:19px;max-width:720px;margin:0 auto 38px}.details-section{background:var(--rose);max-width:none}.details-inner{max-width:1100px;margin:auto}.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.details-card{background:#fff;border-radius:16px;padding:46px 42px;text-align:center}.details-card h3{font-size:36px;font-weight:400;margin:0 0 18px}.details-card p{font-size:20px;margin:0}.rsvp{background:var(--raspberry);max-width:none;color:#fff}.rsvp .inner{max-width:900px;margin:auto}.rsvp h2{color:#fff}.rsvp form{display:grid;gap:15px;background:#fff;color:var(--ink);padding:46px;border-radius:16px}label{font:600 17px Arial}input,select,textarea{width:100%;padding:13px;border:1px solid #ccd3ce;border-radius:8px;font:16px Arial}button{padding:14px;background:var(--magenta);color:#fff;border:0;border-radius:999px}footer{text-align:center;padding:70px 20px;background:var(--magenta);color:#fff}
+@media(max-width:760px){body{line-height:1.5}nav{position:sticky;top:0;padding:10px 14px;gap:18px;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{font-size:11px;white-space:nowrap;letter-spacing:.04em}.hero{min-height:78svh;padding:70px 20px 46px;background-position:center}.hero h1{font-size:46px;line-height:1.04}.hero p{font-size:14px}.btn{margin-top:20px;padding:11px 20px;font-size:13px}section{padding:58px 18px}h2{font-size:34px;line-height:1.12;margin-bottom:30px}.intro{font-size:19px;line-height:1.55}.timeline{grid-template-columns:repeat(2,1fr);gap:12px}.card{padding:24px 14px;border-radius:12px}.time{font-size:20px}.agenda-icon-img{width:50px;height:50px;margin:8px auto 4px}.card h3{font-size:21px;margin:5px 0}.location-stack,.hotel-layout,.witness-grid,.details-grid{grid-template-columns:1fr}.panel h3{font-size:28px;margin-top:0}.panel p{font-size:17px}.location-photo{height:300px;min-height:0}.hotel-layout{gap:20px}.hotels{gap:10px}.hotel{padding:22px 20px}.hotel h3{font-size:25px;margin:0 0 8px}.tag{font-size:14px;padding:5px 9px}.hotel-map{min-height:330px}.taxi-box{margin-top:20px;padding:24px 20px}.taxi-box h3{font-size:25px}.taxi-box p{font-size:16px}.witness-note{font-size:16px;margin-bottom:24px}.witness-grid{gap:12px}.details-grid{gap:12px}.details-card{padding:28px 20px}.details-card h3{font-size:27px;margin-bottom:12px}.details-card p{font-size:17px}.rsvp form{padding:26px 18px;gap:13px}label{font-size:15px}input,select,textarea{font-size:16px;padding:11px}footer{padding:45px 18px}footer h2{font-size:30px;margin-bottom:10px}}
+@media(max-width:390px){.hero h1{font-size:40px}.timeline{grid-template-columns:1fr 1fr}h2{font-size:31px}}
+</style><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></head><body>
+<nav><a href="#tag">Der Tag</a><a href="#location">Location</a><a href="#hotels">Hotels & Taxi</a><a href="#trauzeugen">Trauzeugen</a><a href="#infos">Noch wichtig</a><a href="#rsvp">RSVP</a></nav>
+<header class="hero"><div><p>WIR HEIRATEN</p><h1>Christoph & Anita</h1><p>05. JUNI 2027</p><a class="btn" href="#rsvp">Zu- oder absagen</a></div></header>
+<section><h2>Wir freuen uns auf euch.</h2><p class="intro">Wir möchten diesen besonderen Tag mit unseren Lieblingsmenschen verbringen. Hier findet ihr alle wichtigen Informationen rund um unsere Hochzeit.</p></section>
+<section id="tag" style="background:rgba(244,162,97,.20);max-width:none"><h2>Der Tag</h2><div class="timeline"><div class="card"><div class="time">14:00</div><img class="agenda-icon-img" src="icon-trauung.png" alt=""><h3>Trauung</h3></div><div class="card"><div class="time">15:30</div><img class="agenda-icon-img" src="icon-sektempfang.png" alt=""><h3>Sektempfang</h3></div><div class="card"><div class="time">18:30</div><img class="agenda-icon-img" src="icon-dinner.png" alt=""><h3>Dinner</h3></div><div class="card"><div class="time">21:00</div><img class="agenda-icon-img" src="icon-party.png" alt=""><h3>Party</h3></div></div></section>
+<section id="location"><h2>Location & Anreise</h2><div class="location-stack"><div class="panel"><h3>Haldmühle zu Bissersheim</h3><p>Haldmühle 1<br>67281 Bissersheim</p><p>Trauung und Feier finden auf dem Gelände der Haldmühle zu Bissersheim statt.</p><p><a class="link" href="https://www.google.com/maps/search/?api=1&query=49.538068%2C8.201874">Route in Google Maps öffnen →</a></p></div><img class="location-photo" src="Haldmühle vorne.jpg" alt="Haldmühle"></div></section>
+<section id="hotels"><h2>Hotels & Taxi</h2><div class="hotel-layout"><div class="hotels"><div class="card hotel"><h3>WeinQuartier</h3><span class="tag">Bissersheim</span></div><div class="card hotel"><h3>Gästehaus Eschment</h3><span class="tag">Bissersheim</span></div><div class="card hotel"><h3>Exquisite</h3><span class="tag">Bobenheim am Berg</span></div><div class="card hotel"><h3>Weinheber</h3><span class="tag">Freinsheim</span></div></div><div id="hotel-map" class="hotel-map"></div></div><div class="taxi-box"><h3>Pfalz Taxi Grünstadt</h3><p>Für eure Heimfahrt könnt ihr euch direkt an Pfalz Taxi Grünstadt wenden. Wir empfehlen, insbesondere für die späte Heimfahrt vorab zu reservieren.</p><p><strong>Telefon:</strong> <a href="tel:+4963593033">06359 3033</a></p></div></section>
+<section id="trauzeugen"><h2>Unsere Trauzeugen</h2><p class="witness-note">Bei Fragen, Überraschungen oder Beiträgen zur Feier könnt ihr euch gerne direkt an unsere Trauzeugen wenden.</p><div class="witness-grid"><div class="card"><h3>Felix Uebel</h3><p>Kontaktdaten folgen</p></div><div class="card"><h3>Niko Benkler</h3><p>Kontaktdaten folgen</p></div><div class="card"><h3>Manuel Brand</h3><p>Kontaktdaten folgen</p></div></div></section>
+<section id="infos" class="details-section"><div class="details-inner"><h2>Noch wichtig</h2><div class="details-grid"><div class="details-card"><h3>Dresscode</h3><p>Festlich-sommerlich. Tragt das, worin ihr euch wohlfühlt und mit uns bis spät in die Nacht feiern könnt.</p></div><div class="details-card"><h3>Geschenke</h3><p>Euer Kommen ist für uns das Wichtigste. Wenn ihr uns darüber hinaus etwas schenken möchtet, freuen wir uns über einen Beitrag für gemeinsame Erlebnisse.</p></div></div></div></section>
+<section class="rsvp" id="rsvp"><div class="inner"><h2>Seid ihr dabei?</h2><form><div><label>Vor- und Nachname</label><input required></div><div><label>Kommt ihr?</label><select><option>Ja, wir sind dabei!</option><option>Leider können wir nicht kommen.</option></select></div><div><label>Anzahl Personen</label><input type="number" min="1" max="6" value="1"></div><div><label>Unverträglichkeiten / Hinweise</label><textarea rows="3"></textarea></div><button type="submit">Rückmeldung absenden</button></form></div></section>
+<footer><h2>Wir freuen uns auf euch.</h2><p>Christoph & Anita · 05. Juni 2027</p></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>const map=L.map('hotel-map',{scrollWheelZoom:false});L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);const places=[['Haldmühle zu Bissersheim','Hochzeitslocation',49.538068,8.201874,'#B20254'],['WeinQuartier','Bissersheim',49.537014,8.201998,'#F4A261'],['Gästehaus Eschment','Bissersheim',49.5349068,8.2002517,'#F4A261'],['Exquisite','Bobenheim am Berg',49.5244616,8.1520095,'#F4A261'],['Weinheber','Freinsheim',49.5070831,8.2112436,'#F4A261']],b=[];places.forEach(p=>{L.circleMarker([p[2],p[3]],{radius:10,color:'#3D1930',weight:2,fillColor:p[4],fillOpacity:1}).addTo(map).bindPopup('<strong>'+p[0]+'</strong><br>'+p[1]);b.push([p[2],p[3]])});map.fitBounds(b,{padding:[28,28]});</script></body></html>
